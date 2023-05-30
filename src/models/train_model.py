@@ -23,7 +23,7 @@ from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 
 # Loading data processed
-df = pd.read_csv('../../src/data/processed/data.csv')
+df = pd.read_csv('/data/processed/data.csv')
 
 X = df.drop('PoidsNet', axis=1)
 Y = df['PoidsNet']
