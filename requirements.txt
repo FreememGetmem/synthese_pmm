@@ -14,5 +14,3 @@ python-dotenv
 scikit-learn
 seaborn
 streamlit
-pickle
-
