@@ -1,0 +1,5 @@
+LES METRICS 
+Mean absolute error : 25594.28
+Mean square error : 1340703584.05
+Sqr error : 36615.62
+Score : 0.70

@@ -1,0 +1,4 @@
+outs:
+- md5: 914a9bb8039b67d2486394378739596b
+  size: 4889179
+  path: ExtraTreesRegressor_model_bon.pkl
