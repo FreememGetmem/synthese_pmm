@@ -41,9 +41,9 @@ jobs:
       # To Do
 
       # Run our pipeline
-      # - name: Run mlflow pipeline 
-      #  run: |
-          # dagster job execute -f dagster_mlflow_project/repository.py --job daily_refresh
+      - name: Run mlflow pipeline 
+        run: |
+          dagster job execute -f dagster_mlflow_project/repository.py --job daily_refresh
 
   DeployDev:
     name: Deploy to Dev 
