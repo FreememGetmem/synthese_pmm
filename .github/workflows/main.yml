@@ -34,7 +34,7 @@ jobs:
           python src/models/train_model.py
           python src/features/build_features.py
           python src/models/predict_model.py       
-          pip install -e ".[dev]"
+          pip install -e ".[main]"
           
       
       # Run our smoke tests
