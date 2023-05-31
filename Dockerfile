@@ -4,9 +4,9 @@ WORKDIR /app
 
 COPY requirements.txt ./requirements.txt
 
-COPY /models /app
+COPY /models/* /app
 
-COPY /app /app
+COPY /app/* /app
 
 # EXPOSE 8080
 
