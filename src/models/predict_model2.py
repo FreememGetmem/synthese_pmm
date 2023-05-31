@@ -1,12 +1,12 @@
 import numpy as np
-import pickle
+import  pickle
 import warnings
 import mlflow
 warnings.filterwarnings("ignore")
 
-# import sys
-# sys.path.append('/synthese_pmm/src/utils')
-# from utilities import *
+import sys
+sys.path.append('/synthese_pmm/src/utils')
+from utilities import *
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
