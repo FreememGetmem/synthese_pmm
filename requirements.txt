@@ -14,3 +14,4 @@ python-dotenv
 scikit-learn
 seaborn
 streamlit
+streamlit_echarts

@@ -1,4 +1,4 @@
-from streamlit_echarts import st_echarts
+gitfrom streamlit_echarts import st_echarts
 import streamlit as st
 import pandas as pd
 import pickle
