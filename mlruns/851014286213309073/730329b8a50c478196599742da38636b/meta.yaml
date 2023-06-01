@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/AEC%20-%20Specialisation%20IA/420%20-%20A61-BB%20PR%C3%89PARATION%20DE%20LA%20SOLUTION%20D%27IA%20POUR%20LA%20MISE%20EN%20PRODUCTION/Projet_Synthese/synthese_pmm/mlruns/851014286213309073/730329b8a50c478196599742da38636b/artifacts
+end_time: 1685602850545
+entry_point_name: ''
+experiment_id: '851014286213309073'
+lifecycle_stage: active
+run_id: 730329b8a50c478196599742da38636b
+run_name: persistent-shoat-281
+run_uuid: 730329b8a50c478196599742da38636b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1685602848402
+status: 4
+tags: []
+user_id: mornd

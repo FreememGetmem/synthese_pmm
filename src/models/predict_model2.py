@@ -1,13 +1,12 @@
 import numpy as np
-import  pickle
+import pickle
 import warnings
-import mlflow
 warnings.filterwarnings("ignore")
 
 import sys
 sys.path.append('/synthese_pmm/src/utils')
 from utilities import *
-
+import mlflow
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 from sklearn.preprocessing import StandardScaler
@@ -27,16 +26,25 @@ mlflow.autolog()
 train_features = X_train
 train_labels = Y_train
 
-cols_selected = ['Rejet_Dimensions', 'SuperficieCultiveeHa', 'SuperficieTotaleHa',
-       'NbrePlateauxTotal', 'Rejet_AutresDefauts', 'QtePlantsRequis',
-       'EmplacementChenille', 'RejetDeclassement', 'PesticideAmount',
-       'QteSemencesMillegrains', 'duree_obtenue', 'duree_visee',
-       'AnneeProduction', 'RendementLbParHa', 'TypePlateaux',
-       'Rejet_Matiere_Etrangere', 'PopulationViseeParHa', 'SurplusPourcent',
-       'StadeCulture', 'FertilizerAmount', 'NbChenilleObserve',
-       'NbPlantsObserves', 'QuantiteMaladie', 'Grosseur', 'EmplacementMaladie',
-       'CouleurPlant', 'FournisseurPlant', 'Maladie', 'StadeAlternaria',
-       'NbPlantsMaladie']
+cols_selected = ['RendementLbParHa', 'SuperficieCultiveeHa', 'RejetDeclassement',
+       'NbrePlateauxTotal', 'Rejet_Dimensions', 'SuperficieTotaleHa',
+       'QtePlantsRequis', 'AnneeProduction', 'QteSemencesMillegrains',
+       'EmplacementChenille', 'Rejet_AutresDefauts', 'PesticideAmount',
+       'TypePlateaux', 'duree_visee', 'PopulationViseeParHa', 'duree_obtenue',
+       'Rejet_Matiere_Etrangere', 'SurplusPourcent', 'StadeCulture',
+       'FertilizerAmount', 'NbPlantsObserves', 'FournisseurPlant',
+       'NbChenilleObserve', 'Grosseur']
+
+# cols_selected = ['Rejet_Dimensions', 'SuperficieCultiveeHa', 'SuperficieTotaleHa',
+#        'NbrePlateauxTotal', 'Rejet_AutresDefauts', 'QtePlantsRequis',
+#        'EmplacementChenille', 'RejetDeclassement', 'PesticideAmount',
+#        'QteSemencesMillegrains', 'duree_obtenue', 'duree_visee',
+#        'AnneeProduction', 'RendementLbParHa', 'TypePlateaux',
+#        'Rejet_Matiere_Etrangere', 'PopulationViseeParHa', 'SurplusPourcent',
+#        'StadeCulture', 'FertilizerAmount', 'NbChenilleObserve',
+#        'NbPlantsObserves', 'QuantiteMaladie', 'Grosseur', 'EmplacementMaladie',
+#        'CouleurPlant', 'FournisseurPlant', 'Maladie', 'StadeAlternaria',
+#        'NbPlantsMaladie']
 
 rl = pickle.load(open('models/ExtraTreesRegressor_model_bon.pkl', 'rb'))
 

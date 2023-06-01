@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/AEC%20-%20Specialisation%20IA/420%20-%20A61-BB%20PR%C3%89PARATION%20DE%20LA%20SOLUTION%20D%27IA%20POUR%20LA%20MISE%20EN%20PRODUCTION/Projet_Synthese/synthese_pmm/mlruns/851014286213309073/ee0b97d769bb4ef29444fcdcd44ad8c8/artifacts
+end_time: 1685602918568
+entry_point_name: ''
+experiment_id: '851014286213309073'
+lifecycle_stage: active
+run_id: ee0b97d769bb4ef29444fcdcd44ad8c8
+run_name: shivering-ox-767
+run_uuid: ee0b97d769bb4ef29444fcdcd44ad8c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1685602912193
+status: 3
+tags: []
+user_id: mornd
