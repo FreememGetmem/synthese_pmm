@@ -4,16 +4,16 @@ WORKDIR /app
 
 COPY requirements.txt ./requirements.txt
 
-COPY models/ /app/models/
+COPY models/ /app/
 
-COPY app/ /app/app/
+COPY app/ /app/
 
 
 # EXPOSE 8080
 
 RUN pip install -r requirements.txt
 
-CMD streamlit run /app/app/dashbord.py --server.port $PORT
+CMD streamlit run /app/dashbord.py --server.port $PORT
 
 # ENTRYPOINT ["streamlit", "run"]
 #
