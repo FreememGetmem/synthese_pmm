@@ -19,7 +19,7 @@ def convert_df(df):
 page = st.sidebar.selectbox('Page Navigation', ["Predictor", "Model analysis"])
 st.sidebar.markdown("""---""")
 st.sidebar.write("Created by [Adja & Mor]")
-st.sidebar.image("/imgs/logo.png")
+# st.sidebar.image("/imgs/logo.png")
 
 if page == "Predictor":
     # --- Inputs
