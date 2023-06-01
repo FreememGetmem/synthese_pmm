@@ -14,7 +14,7 @@ RUN ls -la /app
 
 RUN pip install -r requirements.txt
 
-CMD streamlit run /app/dashbord.py --server.port $PORT
+CMD streamlit run /app/app/dashbord.py --server.port $PORT
 
 # ENTRYPOINT ["streamlit", "run"]
 #
