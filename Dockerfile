@@ -8,7 +8,7 @@ COPY models/ /app/models/
 
 COPY app/ /app/app/
 
-RUN ls -la /app
+RUN ls -R /app
 
 # EXPOSE 8080
 
