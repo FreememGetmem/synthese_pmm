@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-rl = pickle.load(open('models/ExtraTreesRegressor_model_bon.pkl', 'rb'))
+rl = pickle.load(open('../models/ExtraTreesRegressor_model_bon.pkl', 'rb'))
 
 # ---- General things Productions Maraîchères Mailhot
 st.title('PMM Dashboard')
