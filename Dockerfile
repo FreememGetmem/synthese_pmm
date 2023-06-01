@@ -7,7 +7,7 @@ COPY requirements.txt ./requirements.txt
 COPY models /app/
 
 COPY app /app/
-
+RUN ls -la /app
 
 # EXPOSE 8080
 
