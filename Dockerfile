@@ -4,9 +4,10 @@ WORKDIR /app
 
 COPY requirements.txt ./requirements.txt
 
-COPY models /app/
+COPY models/ /app/models/
 
-COPY app /app/
+COPY app/ /app/app/
+
 RUN ls -la /app
 
 # EXPOSE 8080
