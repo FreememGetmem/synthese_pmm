@@ -28,16 +28,14 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 train_features = X_train
 train_labels = Y_train
 
-cols_selected = ['Rejet_Dimensions', 'SuperficieCultiveeHa', 'SuperficieTotaleHa',
-       'NbrePlateauxTotal', 'Rejet_AutresDefauts', 'QtePlantsRequis',
-       'EmplacementChenille', 'RejetDeclassement', 'PesticideAmount',
-       'QteSemencesMillegrains', 'duree_obtenue', 'duree_visee',
-       'AnneeProduction', 'RendementLbParHa', 'TypePlateaux',
-       'Rejet_Matiere_Etrangere', 'PopulationViseeParHa', 'SurplusPourcent',
-       'StadeCulture', 'FertilizerAmount', 'NbChenilleObserve',
-       'NbPlantsObserves', 'QuantiteMaladie', 'Grosseur', 'EmplacementMaladie',
-       'CouleurPlant', 'FournisseurPlant', 'Maladie', 'StadeAlternaria',
-       'NbPlantsMaladie']
+cols_selected = ['RendementLbParHa', 'SuperficieCultiveeHa', 'RejetDeclassement',
+       'NbrePlateauxTotal', 'Rejet_Dimensions', 'SuperficieTotaleHa',
+       'QtePlantsRequis', 'AnneeProduction', 'QteSemencesMillegrains',
+       'EmplacementChenille', 'Rejet_AutresDefauts', 'PesticideAmount',
+       'TypePlateaux', 'duree_visee', 'PopulationViseeParHa', 'duree_obtenue',
+       'Rejet_Matiere_Etrangere', 'SurplusPourcent', 'StadeCulture',
+       'FertilizerAmount', 'NbPlantsObserves', 'FournisseurPlant',
+       'NbChenilleObserve', 'Grosseur']
 
 rl = pickle.load(open('models/ExtraTreesRegressor_model_bon.pkl', 'rb'))
 

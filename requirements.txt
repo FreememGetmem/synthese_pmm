@@ -16,3 +16,4 @@ seaborn
 streamlit
 streamlit_echarts
 openpyxl
+flask_swagger_ui

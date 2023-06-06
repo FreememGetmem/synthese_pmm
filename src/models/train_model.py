@@ -34,7 +34,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 # X_train = sc.fit_transform(X_train)
 # X_test = sc.fit_transform(X_test)
 #Regression
-rl = ExtraTreesRegressor(bootstrap=False, ccp_alpha=0.0, criterion='mse', max_features=1.0,
+rl = ExtraTreesRegressor(bootstrap=False, ccp_alpha=0.0, max_features=1.0,
                          min_samples_split=2, min_samples_leaf=1, n_estimators=100, n_jobs=-1, oob_score=False,
                          random_state=123)
 cv = KFold(n_splits=10, shuffle=True, random_state=1)
