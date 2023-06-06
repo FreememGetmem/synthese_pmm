@@ -14,5 +14,12 @@ RUN ls -R /api
 
 RUN pip install -r requirements.txt
 
-CMD python run /api/api/app.py --server.port $PORT
+# configure the container to run in an executed manner
+ENTRYPOINT [ "python" ]
+
+CMD ["/api/app.py" ]
+
+#CMD python /api/api/app.py --server.port $PORT
+
+
 
