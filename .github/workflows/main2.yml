@@ -45,7 +45,7 @@ jobs:
           # (Optional, default: "./")
           # Dockerfile2 directory.
           # For example, if you have a Dockerfile2 in the root of your project, leave it as follows:
-          dockerfile_directory: ./api/
+          dockerfile_directory: ./
 
           # (Optional, default: "Dockerfile2")
           # Dockerfile2 name.
