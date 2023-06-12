@@ -72,4 +72,4 @@ else:
 
     HtmlFile_report = open("visualization/report.html", 'r', encoding='utf-8')
     source_report = HtmlFile_report.read()
-    components.html(source_report)
+    components.html(source_report, width=500, height=500)
