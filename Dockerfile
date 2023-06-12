@@ -8,7 +8,7 @@ COPY models/ /app/models/
 
 COPY app/ /app/app/
 
-COPY src/visualization/ /app/visualization/
+#COPY src/visualization/ /app/visualization/
 
 RUN ls -R /app
 
@@ -25,5 +25,3 @@ CMD streamlit run /app/app/dashbord.py --server.port $PORT
 # ENTRYPOINT ["streamlit", "run"]
 #
 # CMD ["hello.py"]
-
-

@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+
 rl = pickle.load(open('models/ExtraTreesRegressor_model_bon.pkl', 'rb'))
 
 # ---- General things Productions Maraîchères Mailhot
@@ -64,12 +65,12 @@ if page == "Predictor":
         }
         st_echarts(liquidfill_option)
 else:
-    import numpy as np
-    col1, col2 = st.columns([2, 2])
-    data = np.random.randn(10, 1)
+    import streamlit as st
+    import streamlit.components.v1 as components
 
-    col1.subheader("A wide column with a chart")
-    col1.line_chart(data)
+    st.header("test html import")
 
-    col2.subheader("A narrow column with the data")
-    col2.write(data)
+    HtmlFile = open("../visualization/report.html", 'r', encoding='utf-8')
+    source_code = HtmlFile.read()
+    print(source_code)
+    components.html(source_code)
