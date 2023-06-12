@@ -1,0 +1,54 @@
+
+O
+/
+pmm_idID of the pmm"pmm_idJfeature_repo
+ﬂ…Ä§ò›∞¿ﬂ…Ä§ò›∞¿
+C
+#
+__dummy"
+__dummy_idJfeature_repo
+ﬂ…Ä§ò›∞¿ﬂ…Ä§ò›∞¿1"$ab39d0a2-12a5-429c-ad6e-a7a894cbaff7*´™Ñ§∞ÍñÛ2˜
+ÿ
+predictors_df_feature_viewfeature_repopmm_id"
+RendementLbParHa"
+SuperficieCultiveeHa"
+RejetDeclassement"
+NbrePlateauxTotal"
+Rejet_Dimensions"
+SuperficieTotaleHa"
+QtePlantsRequis"
+AnneeProduction"
+QteSemencesMillegrains"
+EmplacementChenille"
+Rejet_AutresDefauts"
+PesticideAmount"
+TypePlateaux"
+duree_visee"
+PopulationViseeParHa"
+duree_obtenue"
+Rejet_Matiere_Etrangere"
+SurplusPourcent"
+StadeCulture"
+FertilizerAmount"
+NbPlantsObserves"
+FournisseurPlant"
+NbChenilleObserve"
+Grosseur2Ä∆
+:|event_timestampZdata/predictors.parquetä1feast.infra.offline_stores.file_source.FileSource¢data/predictors.parquet@b
+
+pmm_id
+∫íÑ§ê«Óg∫íÑ§ê«Óg2Â
+∆
+target_df_feature_viewfeature_repopmm_id"
+PoidsNet2Ä∆
+:tevent_timestampZdata/target.parquetä1feast.infra.offline_stores.file_source.FileSource¢data/target.parquet@b
+
+pmm_id
+∫íÑ§¿∫Ái∫íÑ§¿∫ÁiRö
+å
+,feast.infra.online_stores.sqlite.SqliteTable"€
+ØD:\AEC - Specialisation IA\420 - A61-BB PR√âPARATION DE LA SOLUTION D'IA POUR LA MISE EN PRODUCTION\Projet_Synthese\synthese_pmm\feature_repo\feature_repo\data\online_store.db'feature_repo_predictors_df_feature_view
+à
+,feast.infra.online_stores.sqlite.SqliteTable"◊
+ØD:\AEC - Specialisation IA\420 - A61-BB PR√âPARATION DE LA SOLUTION D'IA POUR LA MISE EN PRODUCTION\Projet_Synthese\synthese_pmm\feature_repo\feature_repo\data\online_store.db#feature_repo_target_df_feature_viewbãevent_timestampZdata/predictors.parquetä1feast.infra.offline_stores.file_source.FileSource¢data/predictors.parquet™feature_repobÉevent_timestampZdata/target.parquetä1feast.infra.offline_stores.file_source.FileSource¢data/target.parquet™feature_repoz4
+feature_repo$6779134a-ede8-4eb8-a7dd-f9634360fd8d

@@ -8,6 +8,8 @@ COPY models/ /app/models/
 
 COPY app/ /app/app/
 
+COPY src/visualization/ /app/visualization/
+
 RUN ls -R /app
 
 # EXPOSE 8080
