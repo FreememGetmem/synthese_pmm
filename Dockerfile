@@ -8,7 +8,7 @@ COPY models/ /app/models/
 
 COPY app/ /app/app/
 
-#COPY src/visualization/ /app/visualization/
+COPY src/visualization/ /app/visualization/
 
 RUN ls -R /app
 
