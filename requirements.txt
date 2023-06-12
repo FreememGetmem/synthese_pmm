@@ -21,3 +21,4 @@ flasgger
 feast
 evidently
 fastparquet
+python-dotenv
