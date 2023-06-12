@@ -20,3 +20,4 @@ flask_swagger_ui
 flasgger
 feast
 evidently
+fastparquet
