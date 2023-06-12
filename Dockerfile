@@ -14,8 +14,6 @@ RUN ls -R /app
 
 # EXPOSE 8080
 
-#RUN python3 -m pip install --upgrade pip setuptools wheel
-#RUN pip install --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 RUN pip cache purge
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
