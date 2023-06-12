@@ -25,9 +25,9 @@ from evidently.tests.base_test import generate_column_tests
 from evidently.test_preset import DataStabilityTestPreset, NoTargetPerformanceTestPreset
 from evidently.tests import *
 
-from feast import FeatureStore
-from feast.infra.offline_stores.file_source import SavedDatasetFileStorage
-from fastparquet import ParquetFile
+# from feast import FeatureStore
+# from feast.infra.offline_stores.file_source import SavedDatasetFileStorage
+# from fastparquet import ParquetFile
 
 # Loading data processed
 df = pd.read_csv('data/processed/data.csv')
