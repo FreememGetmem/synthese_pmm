@@ -68,8 +68,13 @@ else:
     import streamlit as st
     import streamlit.components.v1 as components
 
-    st.header("test html import")
+    st.header("Drift report")
 
     HtmlFile_report = open("visualization/report.html", 'r', encoding='utf-8')
     source_report = HtmlFile_report.read()
     components.html(source_report, width=1000, height=1000, scrolling=True)
+
+    st.header("Drift Tests")
+    HtmlFile_test = open("visualization/tests.html", 'r', encoding='utf-8')
+    source_test = HtmlFile_test.read()
+    components.html(source_test, width=1000, height=1000, scrolling=True)
