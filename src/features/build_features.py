@@ -21,13 +21,14 @@ from evidently.metric_preset import DataDriftPreset, TargetDriftPreset, DataQual
 from evidently.metrics import *
 
 from evidently.test_suite import TestSuite
+from evidently.tests import *
 from evidently.tests.base_test import generate_column_tests
 from evidently.test_preset import DataStabilityTestPreset, NoTargetPerformanceTestPreset
-from evidently.tests import *
+from evidently.metrics import *
 
-# from feast import FeatureStore
-# from feast.infra.offline_stores.file_source import SavedDatasetFileStorage
-# from fastparquet import ParquetFile
+from feast import FeatureStore
+from feast.infra.offline_stores.file_source import SavedDatasetFileStorage
+from fastparquet import ParquetFile
 
 # Loading data processed
 df = pd.read_csv('data/processed/data.csv')
@@ -89,44 +90,44 @@ target_df = pd.concat(objs= [target_df, pmm_ids], axis=1)
 predictors_df.to_parquet(path='feature_repo/feature_repo/data/predictors.parquet')
 target_df.to_parquet(path='feature_repo/feature_repo/data/target.parquet')
 
-# store = FeatureStore(repo_path='feature_repo/feature_repo/')
-#
-# entity_df = pd.read_parquet('feature_repo/feature_repo/data/target.parquet')
-# training_data = store.get_historical_features(
-#    entity_df=entity_df,
-#    features = [ "predictors_df_feature_view:RendementLbParHa",
-#                 "predictors_df_feature_view:SuperficieCultiveeHa",
-#                 "predictors_df_feature_view:RejetDeclassement",
-#                 "predictors_df_feature_view:NbrePlateauxTotal",
-#                 "predictors_df_feature_view:Rejet_Dimensions",
-#                 "predictors_df_feature_view:SuperficieTotaleHa",
-#                 "predictors_df_feature_view:QtePlantsRequis",
-#                 "predictors_df_feature_view:AnneeProduction",
-#                 "predictors_df_feature_view:QteSemencesMillegrains",
-#                 "predictors_df_feature_view:EmplacementChenille",
-#                 "predictors_df_feature_view:Rejet_AutresDefauts",
-#                 "predictors_df_feature_view:PesticideAmount",
-#                 "predictors_df_feature_view:TypePlateaux",
-#                 "predictors_df_feature_view:duree_visee",
-#                 "predictors_df_feature_view:PopulationViseeParHa",
-#                 "predictors_df_feature_view:duree_obtenue",
-#                 "predictors_df_feature_view:Rejet_Matiere_Etrangere",
-#                 "predictors_df_feature_view:SurplusPourcent",
-#                 "predictors_df_feature_view:StadeCulture",
-#                 "predictors_df_feature_view:FertilizerAmount",
-#                 "predictors_df_feature_view:NbPlantsObserves",
-#                 "predictors_df_feature_view:FournisseurPlant",
-#                 "predictors_df_feature_view:NbChenilleObserve",
-#                 "predictors_df_feature_view:Grosseur"
-#                 ]
-# )
-#
+store = FeatureStore(repo_path='feature_repo/feature_repo')
+
+entity_df = pd.read_parquet('feature_repo/feature_repo/data/predictors.parquet', engine='pyarrow')
+training_data = store.get_historical_features(
+   entity_df=entity_df,
+   features = [ "predictors_df_feature_view:RendementLbParHa",
+                "predictors_df_feature_view:SuperficieCultiveeHa",
+                "predictors_df_feature_view:RejetDeclassement",
+                "predictors_df_feature_view:NbrePlateauxTotal",
+                "predictors_df_feature_view:Rejet_Dimensions",
+                "predictors_df_feature_view:SuperficieTotaleHa",
+                "predictors_df_feature_view:QtePlantsRequis",
+                "predictors_df_feature_view:AnneeProduction",
+                "predictors_df_feature_view:QteSemencesMillegrains",
+                "predictors_df_feature_view:EmplacementChenille",
+                "predictors_df_feature_view:Rejet_AutresDefauts",
+                "predictors_df_feature_view:PesticideAmount",
+                "predictors_df_feature_view:TypePlateaux",
+                "predictors_df_feature_view:duree_visee",
+                "predictors_df_feature_view:PopulationViseeParHa",
+                "predictors_df_feature_view:duree_obtenue",
+                "predictors_df_feature_view:Rejet_Matiere_Etrangere",
+                "predictors_df_feature_view:SurplusPourcent",
+                "predictors_df_feature_view:StadeCulture",
+                "predictors_df_feature_view:FertilizerAmount",
+                "predictors_df_feature_view:NbPlantsObserves",
+                "predictors_df_feature_view:FournisseurPlant",
+                "predictors_df_feature_view:NbChenilleObserve",
+                "predictors_df_feature_view:Grosseur"
+                ]
+)
+
 # dataset = store.create_saved_dataset(
 #     from_ = training_data,
 #     name = "diabetes_dataset",
 #     storage = SavedDatasetFileStorage('feature_repo/feature_repo/data/diabetes_dataset.parquet')
 # )
-
+#
 # print(training_data.to_df())
 
 ###### Fin Changement #########
@@ -158,13 +159,24 @@ pmm_data['prediction'] = val
 reference = pmm_data.sample(n=280, replace=False)
 current = pmm_data.sample(n=280, replace=False)
 
-report = Report(metrics=[
+DataDrift = Report(metrics=[
     DataDriftPreset(),
 ])
+DataDrift.run(reference_data=reference, current_data=current)
+DataDrift.save_html('src/visualization/datadrift.html')
 
-report.run(reference_data=reference, current_data=current)
+DataQuality = Report(metrics=[
+    DataQualityPreset(),
+])
+DataQuality.run(reference_data=reference, current_data=current)
+DataQuality.save_html('src/visualization/dataquality.html')
 
-report.save_html('src/visualization/report.html')
+regression = Report(metrics=[
+    RegressionPreset(),
+])
+regression.run(reference_data=reference, current_data=current)
+regression.save_html('src/visualization/regression.html')
+
 
 tests = TestSuite(tests=[
     TestNumberOfColumnsWithMissingValues(),

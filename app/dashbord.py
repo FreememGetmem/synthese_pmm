@@ -17,7 +17,7 @@ def convert_df(df):
     return df.to_csv()
 
 # ---- Sidebar
-page = st.sidebar.selectbox('Page Navigation', ["Predictor", "Model analysis"])
+page = st.sidebar.selectbox('Page Navigation', ["Predictor", "Data Drift", "Data Quality", "Metrics"])
 st.sidebar.markdown("""---""")
 st.sidebar.write("Created by [Adja & Mor]")
 # st.sidebar.image("/imgs/logo.png")
@@ -64,17 +64,29 @@ if page == "Predictor":
             "series": [{"type": "liquidFill", "data": [0.7, 0.5, 0.4, 0.3]}]
         }
         st_echarts(liquidfill_option)
-else:
+elif page == "Data Drift":
     import streamlit as st
     import streamlit.components.v1 as components
 
     st.header("Drift report")
-
-    HtmlFile_report = open("visualization/report.html", 'r', encoding='utf-8')
+    HtmlFile_report = open("visualization/datadrift.html", 'r', encoding='utf-8')
     source_report = HtmlFile_report.read()
     components.html(source_report, width=1000, height=1000, scrolling=True)
 
-    st.header("Drift Tests")
-    HtmlFile_test = open("visualization/tests.html", 'r', encoding='utf-8')
+elif page == "Data Quality":
+    import streamlit as st
+    import streamlit.components.v1 as components
+
+    st.header("Drift report")
+    HtmlFile_report = open("visualization/dataquality.html", 'r', encoding='utf-8')
+    source_report = HtmlFile_report.read()
+    components.html(source_report, width=1000, height=1000, scrolling=True)
+
+elif page == "Metrics":
+    import streamlit as st
+    import streamlit.components.v1 as components
+
+    st.header("Models Metrics")
+    HtmlFile_test = open("visualization/regression.html", 'r', encoding='utf-8')
     source_test = HtmlFile_test.read()
     components.html(source_test, width=1000, height=1000, scrolling=True)
