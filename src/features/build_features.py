@@ -28,7 +28,7 @@ from evidently.metrics import *
 
 from feast import FeatureStore
 from feast.infra.offline_stores.file_source import SavedDatasetFileStorage
-from fastparquet import ParquetFile
+# from fastparquet import ParquetFile
 
 # Loading data processed
 df = pd.read_csv('data/processed/data.csv')
