@@ -68,19 +68,19 @@ elif page == "Data Drift":
     import streamlit as st
     import streamlit.components.v1 as components
 
-    st.header("Drift report")
+    st.header("Data Drift")
     HtmlFile_report = open("visualization/datadrift.html", 'r', encoding='utf-8')
     source_report = HtmlFile_report.read()
-    components.html(source_report, width=1000, height=1000, scrolling=True)
+    components.html(source_report, width=1000, height=2000, scrolling=True)
 
 elif page == "Data Quality":
     import streamlit as st
     import streamlit.components.v1 as components
 
-    st.header("Drift report")
+    st.header("Data Quality")
     HtmlFile_report = open("visualization/dataquality.html", 'r', encoding='utf-8')
     source_report = HtmlFile_report.read()
-    components.html(source_report, width=1000, height=1000, scrolling=True)
+    components.html(source_report, width=1000, height=2000, scrolling=True)
 
 elif page == "Metrics":
     import streamlit as st
@@ -89,4 +89,4 @@ elif page == "Metrics":
     st.header("Models Metrics")
     HtmlFile_test = open("visualization/regression.html", 'r', encoding='utf-8')
     source_test = HtmlFile_test.read()
-    components.html(source_test, width=1000, height=1000, scrolling=True)
+    components.html(source_test, width=1000, height=2000, scrolling=True)
